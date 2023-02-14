@@ -1,6 +1,6 @@
 # Khaana app
 
-A new Flutter project.
+An app with different recipes from different countries where one can select the country they want and get a variety of food recipes from it.
 
 ## Links
 
