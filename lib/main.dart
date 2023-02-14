@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:khana_app/login.dart';
+import 'package:khana_app/splash.dart';
+
 
 void main() => runApp(
     DevicePreview(enabled: !kReleaseMode, builder: (context) => const MyApp()));
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.dark(),
       ),
       // direct the main page to the starting page
-      home: const LoginPage(),
+      home: const Splash(),
+
     );
   }
 }
