@@ -1,16 +1,8 @@
-# khana_app
+# Khaana app
 
-A new Flutter project.
+An app with different recipes from different countries where one can select the country they want and get a variety of food recipes from it.
 
-## Getting Started
+## Links
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [MiniProject1_Baraka_Cohort3_Group6](https://docs.google.com/document/d/1lDhntLhpXmen1cHnup64r082TGtTa3KNSG7EkzMcXSY/edit?usp=sharing)
+- [Figma UI](https://www.figma.com/file/P2WSasvvYZvyzJDLB8oDWw/Khaana-App?node-id=0%3A1&t=bWajVL4bJ4Ft1BkC-1)
