@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:khana_app/login.dart';
 
 class SignupPage extends StatelessWidget {
   const SignupPage({super.key});
@@ -8,7 +9,7 @@ class SignupPage extends StatelessWidget {
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 31, 30, 30),
         body: Padding(
-            padding: const EdgeInsets.all(60),
+            padding: const EdgeInsets.all(30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -31,7 +32,14 @@ class SignupPage extends StatelessWidget {
                       style: TextStyle(color: Colors.grey, fontSize: 20),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LoginPage(),
+                          ),
+                        );
+                      },
                       child: const Text(
                         'Already have an account?',
                         style: TextStyle(color: Colors.green, fontSize: 20),
@@ -150,8 +158,7 @@ class SignupPage extends StatelessWidget {
                               onPressed: () {},
                               child: const Text(
                                 "Sign up",
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 20),
+                                style: TextStyle(color: Colors.white),
                               ),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.green,
@@ -164,7 +171,7 @@ class SignupPage extends StatelessWidget {
                               "By Signing up you agree to our Terms Conditions & Privacy Policy.",
                               style: TextStyle(
                                 color: Colors.grey,
-                                fontSize: 20,
+                                fontSize: 12,
                               ),
                               textAlign: TextAlign.center,
                             )

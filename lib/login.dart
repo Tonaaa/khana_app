@@ -54,7 +54,9 @@ class LoginPage extends StatelessWidget {
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.lightGreen),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
                 child: const Text(
                   'Sign In',
                   style: TextStyle(color: Colors.white),

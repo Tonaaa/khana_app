@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:khana_app/dummy.dart';
-
+import 'package:khana_app/register.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -18,9 +18,9 @@ class _SplashState extends State<Splash> {
   void initState() {
     super.initState();
     Timer(
-        const Duration(seconds: 5),
+        const Duration(seconds: 3),
         () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Dummy())));
+            context, MaterialPageRoute(builder: (context) => Register())));
   }
 
   @override
@@ -30,6 +30,12 @@ class _SplashState extends State<Splash> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Text(
+              'Khaana',
+            ),
+            SizedBox(
+              height: 50,
+            ),
             Image.asset('images/logo.png'),
             // ignore: prefer_const_constructors
             SizedBox(

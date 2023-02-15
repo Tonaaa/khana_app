@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-
-import 'SignUpPage.dart';
+import 'package:khana_app/SignupPage.dart';
 
 class Register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Home"),
-      ),
+      // appBar: AppBar(
+      //   title: const Text("Home"),
+      // ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
           // ignore: prefer_const_literals_to_create_immutables
           children: <Widget>[
-            Image.asset('assets/images/logo.PNG'),
+            Image.asset('images/logo.png'),
             const Text('Welcome to Khaana App',
                 style: TextStyle(
                   fontSize: 20,
@@ -25,11 +25,17 @@ class Register extends StatelessWidget {
                 width: 200,
                 // padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                 child: ElevatedButton(
-                  child: const Text('Sign Up',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                      )),
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(Colors.lightGreen),
+                  ),
+                  child: const Text(
+                    'Sign Up',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  ),
                   onPressed: () {
                     Navigator.push(
                         context,
@@ -37,12 +43,16 @@ class Register extends StatelessWidget {
                             builder: (context) => const SignupPage()));
                   },
                 )),
-            const Text(
-                'By Signing up, you agree to our Terms Conditions & Privacy Policy.',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                )),
+            const Padding(
+              padding: EdgeInsets.all(12.0),
+              child: Text(
+                  'By Signing up, you agree to our Terms Conditions & Privacy Policy.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.white,
+                  )),
+            ),
           ],
         ),
       ),
