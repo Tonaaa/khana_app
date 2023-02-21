@@ -14,7 +14,7 @@ class Register extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           // ignore: prefer_const_literals_to_create_immutables
           children: <Widget>[
-            Image.asset('assets/images/logo.PNG'),
+            Image.asset('images/logo.PNG'),
             const Text('Welcome to Khaana App',
                 style: TextStyle(
                   fontSize: 20,
