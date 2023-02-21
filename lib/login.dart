@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'dashboard.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -55,7 +56,10 @@ class LoginPage extends StatelessWidget {
                   backgroundColor: MaterialStateProperty.all(Colors.lightGreen),
                 ),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Dashboard()));
                 },
                 child: const Text(
                   'Sign In',

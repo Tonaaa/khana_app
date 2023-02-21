@@ -155,15 +155,21 @@ class SignupPage extends StatelessWidget {
                         Column(
                           children: [
                             ElevatedButton(
-                              onPressed: () {},
-                              child: const Text(
-                                "Sign up",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.green,
-                              ),
-                            ),
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all(
+                                      Colors.lightGreen),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const LoginPage()));
+                                },
+                                child: const Text(
+                                  'Sign Up',
+                                  style: TextStyle(color: Colors.white),
+                                )),
                             const SizedBox(
                               height: 40,
                             ),
