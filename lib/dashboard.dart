@@ -44,6 +44,6 @@ class DashboardState extends State<Dashboard> {
                   _currentPage = inIndex;
                 });
               }),
-        ));
+        ),);
   }
 }

@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:khana_app/register.dart';
 
 class Categories extends StatelessWidget {
   @override
@@ -8,6 +11,7 @@ class Categories extends StatelessWidget {
         centerTitle: true,
         title: const Text("Categories"),
         backgroundColor: Colors.lightGreen,
+        toolbarHeight: 70,
       ),
       body: Container(
           padding: const EdgeInsets.all(40),
@@ -25,12 +29,22 @@ class Categories extends StatelessWidget {
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.purple),
                 ),
-                child: const Text('Senegal',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.white,
-                    )),
-                onPressed: () {},
+                onPressed: () {
+                  logOut();
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Register(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'Senegal',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.white,
+                  ),
+                ),
               ),
               ElevatedButton(
                 style: ButtonStyle(
@@ -101,8 +115,7 @@ class Categories extends StatelessWidget {
               ),
               ElevatedButton(
                 style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(Colors.lightGreenAccent),
+                  backgroundColor: MaterialStateProperty.all(Colors.lightGreen),
                 ),
                 child: const Text('Mozambique',
                     style: TextStyle(
@@ -158,5 +171,9 @@ class Categories extends StatelessWidget {
             ],
           )),
     );
+  }
+
+  void logOut() {
+    FirebaseAuth.instance.signOut();
   }
 }
