@@ -42,6 +42,7 @@ dependencies:
   firebase_core: ^2.8.0
   firebase_auth: ^4.3.0
   email_validator: ^2.1.17
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +72,10 @@ flutter:
     - images/facebook.png
     - images/instagram.jpeg
     - images/onboard1.png
+    - images/onboard2.png
+    - images/onboard3.png
+    - images/onboard4.png
+    - images/onboard5.png
     - images/logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
