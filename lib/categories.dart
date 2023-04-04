@@ -1,9 +1,48 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:khana_app/dummy.dart';
+import 'package:khana_app/filters.dart';
+import 'package:khana_app/model/meal.dart';
 import 'package:khana_app/register.dart';
 
-class Categories extends StatelessWidget {
+class Categories extends StatefulWidget {
+  @override
+  State<Categories> createState() => _CategoriesState();
+}
+
+class _CategoriesState extends State<Categories> {
+  Map<String, bool> _filters = {
+    'gluten': false,
+    'lactose': false,
+    'vegetarian': false,
+    'vegan': false
+  };
+
+  List<Meal> _availableMeals = DUMMY_MEALS;
+
+  void _setFilters(Map<String, bool> filterData) {
+    setState(() {
+      _filters = filterData;
+
+      _availableMeals = DUMMY_MEALS.where((meal) {
+        if (_filters['gluten']! && !meal.isGlutenFree) {
+          return false;
+        }
+        if (_filters['lactose']! && !meal.isLactoseFree) {
+          return false;
+        }
+        if (_filters['vegan']! && !meal.isVegan) {
+          return false;
+        }
+        if (_filters['vegetarian']! && !meal.isVegetarian) {
+          return false;
+        }
+        return true;
+      }).toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,6 +52,7 @@ class Categories extends StatelessWidget {
         backgroundColor: Colors.lightGreen,
         toolbarHeight: 70,
       ),
+      drawer: drawerFunction(context),
       body: Container(
           padding: const EdgeInsets.all(40),
           decoration: const BoxDecoration(
@@ -144,7 +184,8 @@ class Categories extends StatelessWidget {
                       fontSize: 15,
                       color: Colors.white,
                     )),
-                onPressed: () {},
+                onPressed: () {
+                },
               ),
               ElevatedButton(
                 style: ButtonStyle(
@@ -177,3 +218,5 @@ class Categories extends StatelessWidget {
     FirebaseAuth.instance.signOut();
   }
 }
+
+
