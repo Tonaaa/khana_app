@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
                       fontSize: 20,
                       color: Colors.white),
                 )),
-        // direct the main page to the starting page
+        // direct the main page to the starting page.
         home: StreamBuilder<User?>(
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
