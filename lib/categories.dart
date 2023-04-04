@@ -1,18 +1,22 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:khana_app/register.dart';
 
+import 'screens/category_meals_screen.dart';
+
 class Categories extends StatelessWidget {
+  const Categories({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
+        // centerTitle: true,
         title: const Text("Categories"),
         backgroundColor: Colors.lightGreen,
         toolbarHeight: 70,
       ),
+      drawer: drawerFunction(context),
       body: Container(
           padding: const EdgeInsets.all(40),
           decoration: const BoxDecoration(
@@ -55,7 +59,14 @@ class Categories extends StatelessWidget {
                       fontSize: 15,
                       color: Colors.white,
                     )),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            const CategoryMealsScreen(availableMeals: []),
+                      ));
+                },
               ),
               ElevatedButton(
                 style: ButtonStyle(
@@ -175,5 +186,70 @@ class Categories extends StatelessWidget {
 
   void logOut() {
     FirebaseAuth.instance.signOut();
+  }
+
+  Widget buildListTile(
+      String title, IconData icon, void Function() tapHandler) {
+    return ListTile(
+        leading: Icon(
+          icon,
+          size: 26,
+          color: Colors.white,
+        ),
+        title: Text(
+          title,
+          style: const TextStyle(
+            fontFamily: 'RobotoCondensed',
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        onTap: tapHandler);
+  }
+
+  Widget drawerFunction(BuildContext context) {
+    return Drawer(
+      child: Container(
+        color: const Color.fromARGB(240, 0, 0, 0),
+        child: Column(children: [
+          Container(
+            height: 150,
+            width: double.infinity,
+            padding: const EdgeInsets.all(20),
+            alignment: Alignment.centerLeft,
+            color: Colors.lightGreen,
+            child: const Text(
+              'Cooking Up!',
+              style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 26,
+                  color: Colors.white),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          buildListTile(
+            'Meals',
+            Icons.restaurant,
+            () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Categories(),
+                  ));
+            },
+          ),
+          buildListTile('Filters', Icons.settings_outlined, () {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FiltersScreen(_filters, _setFilters),
+                ));
+          }),
+        ]),
+      ),
+    );
   }
 }

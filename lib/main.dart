@@ -38,9 +38,14 @@ class MyApp extends StatelessWidget {
         builder: DevicePreview.appBuilder,
         title: 'Registration Page',
         theme: ThemeData(
-          primarySwatch: Colors.lightGreen,
-          colorScheme: const ColorScheme.dark(),
-        ),
+            primarySwatch: Colors.lightGreen,
+            colorScheme: const ColorScheme.dark(),
+            textTheme: ThemeData.light().textTheme.copyWith(
+                  headline6: const TextStyle(
+                      fontFamily: 'RobotoCondensed',
+                      fontSize: 20,
+                      color: Colors.white),
+                )),
         // direct the main page to the starting page
         home: StreamBuilder<User?>(
           stream: FirebaseAuth.instance.authStateChanges(),
