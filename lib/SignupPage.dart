@@ -5,6 +5,7 @@ import 'package:khana_app/dashboard.dart';
 import 'package:khana_app/login.dart';
 import 'package:khana_app/main.dart';
 import 'package:khana_app/register.dart';
+import 'package:khana_app/caroussel.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
@@ -270,7 +271,7 @@ class _SignupPageState extends State<SignupPage> {
           )
         : navigatorKey.currentState!.pushReplacement(
             MaterialPageRoute(
-              builder: (context) => const Dashboard(),
+              builder: (context) => const Caroussel(),
             ),
           );
   }
