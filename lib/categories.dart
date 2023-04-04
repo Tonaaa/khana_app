@@ -1,14 +1,58 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:khana_app/dummy.dart';
+import 'package:khana_app/filters.dart';
+import 'package:khana_app/model/meal.dart';
+import 'package:khana_app/register.dart';
+import 'package:khana_app/screens/category_meals_screen.dart';
 
-class Categories extends StatelessWidget {
+class Categories extends StatefulWidget {
+  @override
+  State<Categories> createState() => _CategoriesState();
+}
+
+class _CategoriesState extends State<Categories> {
+  Map<String, bool> _filters = {
+    'gluten': false,
+    'lactose': false,
+    'vegetarian': false,
+    'vegan': false
+  };
+
+  List<Meal> _availableMeals = DUMMY_MEALS;
+
+  void _setFilters(Map<String, bool> filterData) {
+    setState(() {
+      _filters = filterData;
+
+      _availableMeals = DUMMY_MEALS.where((meal) {
+        if (_filters['gluten']! && !meal.isGlutenFree) {
+          return false;
+        }
+        if (_filters['lactose']! && !meal.isLactoseFree) {
+          return false;
+        }
+        if (_filters['vegan']! && !meal.isVegan) {
+          return false;
+        }
+        if (_filters['vegetarian']! && !meal.isVegetarian) {
+          return false;
+        }
+        return true;
+      }).toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
+        // centerTitle: true,
         title: const Text("Categories"),
         backgroundColor: Colors.lightGreen,
+        toolbarHeight: 70,
       ),
+      drawer: drawerFunction(context),
       body: Container(
           padding: const EdgeInsets.all(40),
           decoration: const BoxDecoration(
@@ -25,12 +69,22 @@ class Categories extends StatelessWidget {
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(Colors.purple),
                 ),
-                child: const Text('Senegal',
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: Colors.white,
-                    )),
-                onPressed: () {},
+                onPressed: () {
+                  logOut();
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Register(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'Senegal',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.white,
+                  ),
+                ),
               ),
               ElevatedButton(
                 style: ButtonStyle(
@@ -41,7 +95,14 @@ class Categories extends StatelessWidget {
                       fontSize: 15,
                       color: Colors.white,
                     )),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            const CategoryMealsScreen(availableMeals: []),
+                      ));
+                },
               ),
               ElevatedButton(
                 style: ButtonStyle(
@@ -101,8 +162,7 @@ class Categories extends StatelessWidget {
               ),
               ElevatedButton(
                 style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(Colors.lightGreenAccent),
+                  backgroundColor: MaterialStateProperty.all(Colors.lightGreen),
                 ),
                 child: const Text('Mozambique',
                     style: TextStyle(
@@ -157,6 +217,75 @@ class Categories extends StatelessWidget {
               ),
             ],
           )),
+    );
+  }
+
+  void logOut() {
+    FirebaseAuth.instance.signOut();
+  }
+
+  Widget buildListTile(
+      String title, IconData icon, void Function() tapHandler) {
+    return ListTile(
+        leading: Icon(
+          icon,
+          size: 26,
+          color: Colors.white,
+        ),
+        title: Text(
+          title,
+          style: const TextStyle(
+            fontFamily: 'RobotoCondensed',
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
+        onTap: tapHandler);
+  }
+
+  Widget drawerFunction(BuildContext context) {
+    return Drawer(
+      child: Container(
+        color: const Color.fromARGB(240, 0, 0, 0),
+        child: Column(children: [
+          Container(
+            height: 150,
+            width: double.infinity,
+            padding: const EdgeInsets.all(20),
+            alignment: Alignment.centerLeft,
+            color: Colors.lightGreen,
+            child: const Text(
+              'Cooking Up!',
+              style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 26,
+                  color: Colors.white),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          buildListTile(
+            'Meals',
+            Icons.restaurant,
+            () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Categories(),
+                  ));
+            },
+          ),
+          buildListTile('Filters', Icons.settings_outlined, () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => FiltersScreen(_filters, _setFilters),
+              ),
+            );
+          }),
+        ]),
+      ),
     );
   }
 }

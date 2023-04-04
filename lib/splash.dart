@@ -1,9 +1,12 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:khana_app/dummy.dart';
+import 'package:khana_app/dashboard.dart';
+import 'package:khana_app/login.dart';
 import 'package:khana_app/register.dart';
 
 class Splash extends StatefulWidget {
@@ -18,9 +21,17 @@ class _SplashState extends State<Splash> {
   void initState() {
     super.initState();
     Timer(
-        const Duration(seconds: 3),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Register())));
+      const Duration(seconds: 3),
+      () => Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Register(),
+        ),
+      ),
+    );
+    //     ),
+    //   ),
+    // );
   }
 
   @override
@@ -42,8 +53,8 @@ class _SplashState extends State<Splash> {
               height: 30,
             ),
             const CircularProgressIndicator(
-              backgroundColor: Colors.grey,
-              valueColor: AlwaysStoppedAnimation(Colors.black),
+              backgroundColor: Colors.lightGreen,
+              valueColor: AlwaysStoppedAnimation(Colors.grey),
               strokeWidth: 5,
             ),
           ],
