@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:khana_app/model/category.dart';
 import 'package:khana_app/model/meal.dart';
 
@@ -11,6 +12,7 @@ const DUMMY_CATEGORIES =  [
   ),
   Category(
     id: 'c2',
+
     title: 'Quick & Easy',
     color: Colors.red,
   ),
@@ -405,4 +407,6 @@ const DUMMY_MEALS =  [
     isVegetarian: true,
     isLactoseFree: true,
   ),
+
 ];
+

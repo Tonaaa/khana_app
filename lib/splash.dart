@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:khana_app/dashboard.dart';
-import 'package:khana_app/dummy.dart';
 import 'package:khana_app/login.dart';
 import 'package:khana_app/register.dart';
 
