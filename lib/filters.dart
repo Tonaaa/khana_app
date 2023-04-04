@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:khana_app/categories.dart';
 //import '../widgets/main_drawer.dart';
 
 class FiltersScreen extends StatefulWidget {
@@ -71,7 +72,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
           )
         ],
       ),
-      drawer: drawerFunction(context),
+      //drawer: drawerFunction(context),
       body: Column(
         children: <Widget>[
           Container(

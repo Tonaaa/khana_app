@@ -14,7 +14,7 @@ class DashboardState extends State<Dashboard> {
 
 // ignore: prefer_final_fields
   var _pages = [
-    const Categories(),
+    Categories(),
     Favorites(),
   ];
 

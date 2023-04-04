@@ -4,7 +4,7 @@ import 'package:khana_app/dummy.dart';
 import 'package:khana_app/filters.dart';
 import 'package:khana_app/model/meal.dart';
 import 'package:khana_app/register.dart';
-
+import 'package:khana_app/screens/category_meals_screen.dart';
 
 class Categories extends StatefulWidget {
   @override
@@ -191,8 +191,7 @@ class _CategoriesState extends State<Categories> {
                       fontSize: 15,
                       color: Colors.white,
                     )),
-                onPressed: () {
-                },
+                onPressed: () {},
               ),
               ElevatedButton(
                 style: ButtonStyle(
@@ -274,21 +273,19 @@ class _CategoriesState extends State<Categories> {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Categories(),
+                    builder: (context) => Categories(),
                   ));
             },
           ),
           buildListTile('Filters', Icons.settings_outlined, () {
-            Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => FiltersScreen(_filters, _setFilters),
-                ));
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => FiltersScreen(_filters, _setFilters),
+              ),
+            );
           }),
         ]),
       ),
     );
   }
 }
-
-
