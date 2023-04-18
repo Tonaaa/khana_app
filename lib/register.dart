@@ -21,7 +21,7 @@ class Register extends StatelessWidget {
               width: 300,
               height: 400,
             ),
-            const Text('Welcome to Khaana App',
+            const Text('Welcome to Khaana App.',
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.white,
