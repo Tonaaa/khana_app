@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:khana_app/categories.dart';
+import 'package:khana_app/main.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 //import '../widgets/main_drawer.dart';
 
 class FiltersScreen extends StatefulWidget {
@@ -38,28 +40,27 @@ class _FiltersScreenState extends State<FiltersScreen> {
     return SwitchListTile(
       title: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.white, // changed text color to white
-          //fontSize: 16,
-          //fontWeight: FontWeight.bold,
         ),
       ),
       value: currentValue,
-      subtitle: Text(description, style: TextStyle(color: Colors.white)),
+      subtitle: Text(description, style: const TextStyle(color: Colors.white)),
       onChanged: updateValue,
+      activeColor: Colors.lightGreen,
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 41, 40, 40),
+      backgroundColor: const Color.fromARGB(255, 41, 40, 40),
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('Filters'),
+        title: const Text('Filters'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.save),
+            icon: const Icon(Icons.save),
             onPressed: () {
               final selectedFilters = {
                 'gluten': _glutenFree,
@@ -76,8 +77,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
       body: Column(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.all(20),
-            child: Text(
+            padding: const EdgeInsets.all(20),
+            child: const Text(
               'Adjust your meal selection.',
               style: TextStyle(color: Colors.white),
             ),
@@ -131,6 +132,29 @@ class _FiltersScreenState extends State<FiltersScreen> {
                         _vegan = newValue;
                       },
                     );
+                  },
+                ),
+                SwitchListTile(
+                  title: const Text(
+                    'Mode',
+                    style: TextStyle(
+                      color: Colors.white, // changed text color to white
+                    ),
+                  ),
+                  activeColor: Colors.lightGreen,
+                  value: isDarkMode,
+                  subtitle: const Text(
+                    'Light or Dark Mode',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onChanged: (value) async {
+                    setState(() {
+                      isDarkMode = value;
+                    });
+
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+                    await prefs.setBool('darkMode', value);
                   },
                 )
               ],
