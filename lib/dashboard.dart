@@ -3,6 +3,7 @@ import 'categories.dart';
 import 'favorites.dart';
 
 class Dashboard extends StatefulWidget {
+  
   const Dashboard({super.key});
 
   @override
