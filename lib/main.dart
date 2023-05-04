@@ -21,7 +21,8 @@ final ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
   // add other properties here for the light theme
   canvasColor: Color.fromRGBO(248, 248, 248, 1),
-   primarySwatch: Colors.lightGreen,
+  primarySwatch: Colors.lightGreen,
+  appBarTheme: const AppBarTheme(backgroundColor:Colors.lightGreen),
   colorScheme: const ColorScheme.light(),
   accentColor: Colors.lightGreen,
   fontFamily: 'Raleway',

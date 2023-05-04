@@ -94,7 +94,6 @@ class _SignupPageState extends State<SignupPage> {
                               autofillHints: const [AutofillHints.email],
                               style: const TextStyle(
                                 color: Colors.white,
-                                fontSize: 22,
                               ),
                               cursorColor: Colors.white,
                               decoration: const InputDecoration(
@@ -120,7 +119,7 @@ class _SignupPageState extends State<SignupPage> {
                               keyboardType: TextInputType.number,
                               style: const TextStyle(
                                 color: Colors.white,
-                                fontSize: 22,
+                                
                               ),
                               cursorColor: Colors.white,
                               decoration: const InputDecoration(
@@ -154,7 +153,7 @@ class _SignupPageState extends State<SignupPage> {
                               obscureText: true,
                               style: const TextStyle(
                                 color: Colors.white,
-                                fontSize: 22,
+                                
                               ),
                               cursorColor: Colors.white,
                               decoration: const InputDecoration(
@@ -181,7 +180,7 @@ class _SignupPageState extends State<SignupPage> {
                               obscureText: true,
                               style: const TextStyle(
                                 color: Colors.white,
-                                fontSize: 22,
+                                
                               ),
                               cursorColor: Colors.white,
                               decoration: const InputDecoration(
