@@ -24,9 +24,7 @@ class _SplashState extends State<Splash> {
       const Duration(seconds: 3),
       () => Navigator.pushReplacement(
         context,
-        MaterialPageRoute(
-          builder: (context) => Register(),
-        ),
+        MaterialPageRoute(builder: (context) => Register()),
       ),
     );
     //     ),
@@ -37,28 +35,28 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Khaana',
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            Image.asset('images/logo.png'),
-            // ignore: prefer_const_constructors
-            SizedBox(
-              height: 30,
-            ),
-            const CircularProgressIndicator(
-              backgroundColor: Colors.lightGreen,
-              valueColor: AlwaysStoppedAnimation(Colors.grey),
-              strokeWidth: 5,
-            ),
-          ],
-        ),
+      backgroundColor: Color.fromRGBO(40, 39, 39, 1),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Khaana',
+            style: TextStyle(color: Colors.white),
+          ),
+          SizedBox(
+            height: 50,
+          ),
+          Image.asset('images/logo.png'),
+          // ignore: prefer_const_constructors
+          SizedBox(
+            height: 30,
+          ),
+          const CircularProgressIndicator(
+            backgroundColor: Colors.lightGreen,
+            valueColor: AlwaysStoppedAnimation(Colors.grey),
+            strokeWidth: 5,
+          ),
+        ],
       ),
     );
   }

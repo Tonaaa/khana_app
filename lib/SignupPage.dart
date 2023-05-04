@@ -78,8 +78,9 @@ class _SignupPageState extends State<SignupPage> {
                           children: [
                             const Text(
                               'Email',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
                             TextFormField(
                               autovalidateMode:
@@ -93,7 +94,6 @@ class _SignupPageState extends State<SignupPage> {
                               autofillHints: const [AutofillHints.email],
                               style: const TextStyle(
                                 color: Colors.white,
-                                fontSize: 22,
                               ),
                               cursorColor: Colors.white,
                               decoration: const InputDecoration(
@@ -111,14 +111,15 @@ class _SignupPageState extends State<SignupPage> {
                             ),
                             const Text(
                               'Phone number',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
                             TextFormField(
                               keyboardType: TextInputType.number,
                               style: const TextStyle(
                                 color: Colors.white,
-                                fontSize: 22,
+                                
                               ),
                               cursorColor: Colors.white,
                               decoration: const InputDecoration(
@@ -136,8 +137,9 @@ class _SignupPageState extends State<SignupPage> {
                             ),
                             const Text(
                               'Password',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
                             TextFormField(
                               autovalidateMode:
@@ -151,7 +153,7 @@ class _SignupPageState extends State<SignupPage> {
                               obscureText: true,
                               style: const TextStyle(
                                 color: Colors.white,
-                                fontSize: 22,
+                                
                               ),
                               cursorColor: Colors.white,
                               decoration: const InputDecoration(
@@ -169,15 +171,16 @@ class _SignupPageState extends State<SignupPage> {
                             ),
                             const Text(
                               'Confirm password',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
                             TextFormField(
                               keyboardType: TextInputType.visiblePassword,
                               obscureText: true,
                               style: const TextStyle(
                                 color: Colors.white,
-                                fontSize: 22,
+                                
                               ),
                               cursorColor: Colors.white,
                               decoration: const InputDecoration(

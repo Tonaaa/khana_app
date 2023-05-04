@@ -2,6 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:khana_app/dashboard.dart';
 
+import 'categories.dart';
+
 class Caroussel extends StatefulWidget {
   const Caroussel({super.key});
 
@@ -14,11 +16,11 @@ class _CarousselState extends State<Caroussel> {
   final CarouselController _controller = CarouselController();
 
   final List<String> imgList = [
-    'assets/images/onboard1.png',
-    'assets/images/onboard2.png',
-    'assets/images/onboard3.png',
-    'assets/images/onboard4.png',
-    'assets/images/onboard5.png'
+    'images/onboard1.png',
+    'images/onboard2.png',
+    'images/onboard3.png',
+    'images/onboard4.png',
+    'images/onboard5.png'
   ];
   @override
   void initState() {
@@ -53,7 +55,7 @@ class _CarousselState extends State<Caroussel> {
                               const BorderRadius.all(Radius.circular(20.0)),
                           child: Stack(
                             children: <Widget>[
-                              Image.network(item,
+                              Image.asset(item,
                                   fit: BoxFit.cover, width: 500.0),
                               Positioned(
                                 bottom: 0.0,
@@ -106,7 +108,7 @@ class _CarousselState extends State<Caroussel> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const Dashboard(),
+                builder: (context) => Categories(),
               ),
             ),
             child: const Text(
@@ -114,20 +116,20 @@ class _CarousselState extends State<Caroussel> {
               style: TextStyle(color: Colors.lightGreen),
             ),
           ),
-          // SizedBox(
-          //   width: 500.0,
-          //   child: Align(
-          //     alignment: Alignment.centerRight,
-          //     child: TextButton(
-          //       style: TextButton.styleFrom(
-          //         foregroundColor: Colors.lightGreen,
-          //         textStyle: const TextStyle(fontSize: 20),
-          //       ),
-          //       onPressed: () {},
-          //       child: const Text('Skip'),
-          //     ),
-          //   ),
-          // ),
+// SizedBox(
+// width: 500.0,
+// child: Align(
+// alignment: Alignment.centerRight,
+// child: TextButton(
+// style: TextButton.styleFrom(
+// foregroundColor: Colors.lightGreen,
+// textStyle: const TextStyle(fontSize: 20),
+// ),
+// onPressed: () {},
+// child: const Text('Skip'),
+// ),
+// ),
+// ),
         ],
       ),
     ));
