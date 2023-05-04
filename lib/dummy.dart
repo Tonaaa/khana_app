@@ -1,60 +1,60 @@
 import 'package:flutter/material.dart';
 
-import 'package:khana_app/model/category.dart';
-import 'package:khana_app/model/meal.dart';
+import 'models/category.dart';
+import 'models/meal.dart';
+
 
 
 const DUMMY_CATEGORIES =  [
   Category(
     id: 'c1',
-    title: 'Italian',
+    title: 'Senegal',
     color: Colors.purple,
   ),
   Category(
     id: 'c2',
-
-    title: 'Quick & Easy',
-    color: Colors.red,
+    title: 'Cameroon',
+    color: Colors.deepOrange,
   ),
   Category(
     id: 'c3',
-    title: 'Hamburgers',
+    title: 'Nigeria',
     color: Colors.orange,
   ),
   Category(
     id: 'c4',
-    title: 'German',
-    color: Colors.amber,
+    title: 'Morocco',
+    color: Colors.lime,
   ),
   Category(
     id: 'c5',
-    title: 'Light & Lovely',
+    title: 'Rwanda',
     color: Colors.blue,
   ),
   Category(
     id: 'c6',
-    title: 'Exotic',
-    color: Colors.green,
+    title: 'Ethiopia',
+    color: Colors.indigo,
   ),
   Category(
     id: 'c7',
-    title: 'Breakfast',
-    color: Colors.lightBlue,
+    title: 'Zimbabwe',
+    color: Colors.teal,
   ),
   Category(
     id: 'c8',
-    title: 'Asian',
+    title: 'Mozambique',
     color: Colors.lightGreen,
   ),
   Category(
     id: 'c9',
-    title: 'French',
-    color: Colors.pink,
+    title: 'Ghana',
+    color: Colors.redAccent,
   ),
   Category(
     id: 'c10',
-    title: 'Summer',
-    color: Colors.teal,
+    title: 'Kenya',
+    color: Colors.brown,
   ),
 ];
 
@@ -409,4 +409,3 @@ const DUMMY_MEALS =  [
   ),
 
 ];
-
