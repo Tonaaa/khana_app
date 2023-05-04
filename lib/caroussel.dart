@@ -2,6 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:khana_app/dashboard.dart';
 
+import 'categories.dart';
+
 class Caroussel extends StatefulWidget {
   const Caroussel({super.key});
 
@@ -106,7 +108,7 @@ class _CarousselState extends State<Caroussel> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const Dashboard(),
+                builder: (context) => Categories(),
               ),
             ),
             child: const Text(
@@ -114,20 +116,20 @@ class _CarousselState extends State<Caroussel> {
               style: TextStyle(color: Colors.lightGreen),
             ),
           ),
-          // SizedBox(
-          //   width: 500.0,
-          //   child: Align(
-          //     alignment: Alignment.centerRight,
-          //     child: TextButton(
-          //       style: TextButton.styleFrom(
-          //         foregroundColor: Colors.lightGreen,
-          //         textStyle: const TextStyle(fontSize: 20),
-          //       ),
-          //       onPressed: () {},
-          //       child: const Text('Skip'),
-          //     ),
-          //   ),
-          // ),
+// SizedBox(
+// width: 500.0,
+// child: Align(
+// alignment: Alignment.centerRight,
+// child: TextButton(
+// style: TextButton.styleFrom(
+// foregroundColor: Colors.lightGreen,
+// textStyle: const TextStyle(fontSize: 20),
+// ),
+// onPressed: () {},
+// child: const Text('Skip'),
+// ),
+// ),
+// ),
         ],
       ),
     ));
