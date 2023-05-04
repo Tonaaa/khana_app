@@ -3,7 +3,7 @@ import '../screens/meal_detail_screen.dart';
 import '../models/meal.dart';
 
 class MealItem extends StatelessWidget {
-  // const MealItem({ Key? key }) : super(key: key);
+// const MealItem({ Key? key }) : super(key: key);
 
   final String id;
   final String title;
@@ -51,7 +51,7 @@ class MealItem extends StatelessWidget {
         .pushNamed(MealDetailsScreen.routeName, arguments: id)
         .then((result) {
       if (result != null) {
-        // removeItem(result);
+// removeItem(result);
       }
     });
   }
@@ -100,46 +100,44 @@ class MealItem extends StatelessWidget {
                   bottomLeft: Radius.circular(15),
                   bottomRight: Radius.circular(15),
                 ),
-                color: Theme.of(context).accentColor,
+                color: Colors.lightGreen,
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20),
-                child: Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.schedule,
-                            color: Colors.white,
-                          ),
-                          SizedBox(width: 6),
-                          Text('$duration min')
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.settings,
-                            color: Colors.white,
-                          ),
-                          SizedBox(width: 6),
-                          Text(complexityText)
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.attach_money,
-                            color: Colors.white,
-                          ),
-                          SizedBox(width: 6),
-                          Text(affordabilityText)
-                        ],
-                      ),
-                    ],
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.schedule,
+                          color: Colors.white,
+                        ),
+                        SizedBox(width: 6),
+                        Text('$duration min')
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.settings,
+                          color: Colors.white,
+                        ),
+                        SizedBox(width: 6),
+                        Text(complexityText)
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.attach_money,
+                          color: Colors.white,
+                        ),
+                        SizedBox(width: 6),
+                        Text(affordabilityText)
+                      ],
+                    ),
+                  ],
                 ),
               ),
             )

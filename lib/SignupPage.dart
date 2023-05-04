@@ -78,8 +78,9 @@ class _SignupPageState extends State<SignupPage> {
                           children: [
                             const Text(
                               'Email',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
                             TextFormField(
                               autovalidateMode:
@@ -111,8 +112,9 @@ class _SignupPageState extends State<SignupPage> {
                             ),
                             const Text(
                               'Phone number',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
                             TextFormField(
                               keyboardType: TextInputType.number,
@@ -136,8 +138,9 @@ class _SignupPageState extends State<SignupPage> {
                             ),
                             const Text(
                               'Password',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
                             TextFormField(
                               autovalidateMode:
@@ -169,8 +172,9 @@ class _SignupPageState extends State<SignupPage> {
                             ),
                             const Text(
                               'Confirm password',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 20),
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
                             TextFormField(
                               keyboardType: TextInputType.visiblePassword,
